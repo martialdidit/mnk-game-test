@@ -1,0 +1,70 @@
+		       Contest mode test files
+		       =======================
+
+This README explain what behavior is expected for each test file.
+
+First, the file's name are all of two types:
+
+- board-[0-9][0-9]-title :
+  Is a file expected to be parsed properly by the software.
+
+- board-[0-9][0-9]e-title :
+  Is a file expected to trigger an error in the software.
+
+
+Board sizes
+-----------
+board-00e-size_0x0
+board-01-size_1x1
+board-02-size_2x1
+board-03-size_2x2
+board-04-size_3x3
+board-05-size_3x3
+board-06-size_12x12
+board-07-size_12x6
+board-08-size_6x12
+board-09-size_24x24
+board-10-size_24x3
+board-11-size_32x32
+board-12-size_32x42
+board-13-size_42x42
+board-14-size_64x64
+board-15-size_65x64
+board-16e-size_64x65
+board-17e-size_65x65
+board-18-size_4x4_with_no_final_linebreak
+board-19-size_1x4_with_no_final_linebreak
+board-20e-4x4_with_wrong_line_3
+board-21e-4x4_with_wrong_line_4
+
+
+Fuzzy inputs
+------------
+board-22-4x4_with_comments_and_no_final_linebreak
+board-23-4x4_with_spaces_and_tabs_and_no_final_linebreak
+board-24-4x4_with_comments_spaces_and_tabs_and_no_final_linebreak
+board-25e-4x4_with_k_is_minus_one
+board-26e-4x4_with_k_is_zero
+board-27e-4x4_with_k_is_5
+board-28e-4x4_with_k_missing
+
+
+Playing with players characters input
+-------------------------------------
+board-29-4x4_invert_players
+board-30-4x4_players_are_numbers
+board-31e-4x4_one_player_is__
+board-32e-4x4_same_player_twice
+board-33e-4x4_one_player_missing
+
+
+Playing with game state recovery
+--------------------------------
+board-34-4x4_first_player_turn
+board-35-4x4_second_player_turn
+board-36e-4x4_first_player_win
+board-37e-4x4_second_player_win
+board-38e-4x4_draw_game
+board_39e-4x4_too_many_Xs
+board_40e-4x4_too_many_Os
+board_41e-4x4_no_X
