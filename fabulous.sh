@@ -20,7 +20,7 @@ function fabulous {
     
     EXPECT_VALUE=$1
     shift
-    "$@"
+    "$@" &>/dev/null
     local status=$?
     if [ $EXPECT_VALUE -eq 0 ]; then
       echo "Expected result: EXIT_SUCCESS"
