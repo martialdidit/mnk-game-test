@@ -7,19 +7,13 @@ Automatic test of the mnk-game
 
 ### 1) How to use the script ? 
 
-<<<<<<< HEAD
 Go to the parent folder of the `mnk-game/` directory
 ```
-=======
->>>>>>> 8f57f76... config readme
 git clone https://github.com/martialdidit/mnk-game-test.git
 cd mnk-game-test
 chmod +x fabulous.sh
 ./fabulous.sh sample_test
-<<<<<<< HEAD
 ```
-=======
->>>>>>> 8f57f76... config readme
 
 ### 2) See the results
 
