@@ -52,7 +52,6 @@ function fabulous {
     fi
     echo ""
 }
-
 function game {
 
     EXPECT_VALUE=$1
@@ -60,9 +59,9 @@ function game {
     FILE=$1
     shift
     while read -r line
-    do 
+    do
         cat <<< "$line"
-    done <te | "$@" &>/dev/null
+    done <$FILE | "$@" &>/dev/null
 
     local status=$?
     if [ $EXPECT_VALUE -eq 0 ]; then
@@ -83,8 +82,6 @@ function game {
         failed
     fi
     echo ""
-
-
 }
 
 

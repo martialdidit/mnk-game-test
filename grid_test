@@ -3,12 +3,6 @@
 0 game/game_quit_Q ../mnk-game/./mnk-game --set-m 5
 0 game/game_quit_Q ../mnk-game/./mnk-game --set-n 5
 0 game/game_quit_Q ../mnk-game/./mnk-game
-0 game/game_quit_Q_Q ../mnk-game/./mnk-game
-0 game/game_quit_Q_a ../mnk-game/./mnk-game
-0 game/game_quit_Qa ../mnk-game/./mnk-game
-0 game/game_quit_g_space ../mnk-game/./mnk-game
-0 game/game_quit_q ../mnk-game/./mnk-game
-0 game/game_quit_q_space_bis ../mnk-game/./mnk-game
 0 game/game_draw ../mnk-game/./mnk-game
 0 game/game_winner_1 ../mnk-game/./mnk-game
 0 game/game_winner_2 ../mnk-game/./mnk-game
