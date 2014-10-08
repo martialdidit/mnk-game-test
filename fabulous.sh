@@ -5,6 +5,17 @@
 #Martial Puygrenier - martialdidit
 #last update : 07/10/2014
 
+if [ -z "$1" ]
+  then
+    echo "file sample_test missing"
+    exit
+fi
+if [ -z "$2" ]
+  then
+    echo "file grid_test missing"
+    exit
+fi
+
 STARTTIME=$(date +%s)
 declare pass=0
 declare fail=0
