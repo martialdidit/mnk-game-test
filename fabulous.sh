@@ -3,7 +3,7 @@
 #mnk-game-test
 #Following repository: https://github.com/martialdidit/mnk-game-test
 #Martial Puygrenier - martialdidit
-#last update : 07/10/2014
+#last update : 08/10/2014
 
 if [ -z "$1" ]
   then
