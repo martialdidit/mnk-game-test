@@ -12,7 +12,7 @@ Go to the parent folder of the `mnk-game/` directory
 git clone https://github.com/martialdidit/mnk-game-test.git
 cd mnk-game-test
 chmod +x fabulous.sh
-./fabulous.sh sample_test
+./fabulous.sh sample_test grid_test
 ```
 
 ### 2) See the results

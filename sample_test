@@ -28,18 +28,6 @@
 1 ../mnk-game/./mnk-game --contest
 1 ../mnk-game/./mnk-game -c TEXT.TEXT
 1 ../mnk-game/./mnk-game --contest TEXT.TEXT
-0 echo "q" | ../mnk-game/./mnk-game
-0 echo "Q" | ../mnk-game/./mnk-game
-0 echo "Q" | ../mnk-game/./mnk-game -m 5
-0 echo "Q" | ../mnk-game/./mnk-game -n 5
-0 echo "Q" | ../mnk-game/./mnk-game -k 5
-0 echo "Q" | ../mnk-game/./mnk-game --set-m 5
-0 echo "Q" | ../mnk-game/./mnk-game --set-k 5
-0 echo "Q" | ../mnk-game/./mnk-game --set-n 5
-0 echo "Q Q" | ../mnk-game/./mnk-game
-0 echo "Qa" | ../mnk-game/./mnk-game
-0 echo "Q a" | ../mnk-game/./mnk-game
-0 echo "   Q  " | ../mnk-game/./mnk-game
 1 ../mnk-game/./mnk-game -c test/board-00e-size_0x0
 0 ../mnk-game/./mnk-game -c test/board-01-size_1x1
 0 ../mnk-game/./mnk-game -c test/board-02-size_2x1

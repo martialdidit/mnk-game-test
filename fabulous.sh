@@ -42,6 +42,41 @@ function fabulous {
     echo ""
 }
 
+function game {
+
+    EXPECT_VALUE=$1
+    shift
+    FILE=$1
+    shift
+    while read -r line
+    do 
+        cat <<< "$line"
+    done <te | "$@" &>/dev/null
+
+    local status=$?
+    if [ $EXPECT_VALUE -eq 0 ]; then
+      echo "Expected result: EXIT_SUCCESS"
+    else
+      echo "Expected result: EXIT_FAILURE"
+    fi
+    if [ $status -eq $EXPECT_VALUE ]; then
+        echo "*Passed*: check $@"
+        success
+    else
+        ERROR=$("$@" 2>&1 >/dev/null)
+        echo "****FAILED!****: check $@"
+        echo ""
+        echo "Return code: $status (Error)"
+        echo "Stderr"
+        echo $ERROR
+        failed
+    fi
+    echo ""
+
+
+}
+
+
 echo "=======================[ mnk-game ]========================="
 echo ""
 echo "-----------( File Hierarchy )---------"
@@ -107,6 +142,13 @@ do
     name=$line
     fabulous $name
 done < $1
+
+#Grid test
+while read line
+do
+    name=$line
+    game $name
+done < $2
 
 ENDTIME=$(date +%s)
 
