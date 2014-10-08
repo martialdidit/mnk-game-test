@@ -42,7 +42,7 @@ function fabulous {
         echo "*Passed*: check $@"
         success
     else
-        ERROR=$("$@" 2>&1 >/dev/null)
+        ERROR=$("$@")
         echo "****FAILED!****: check $@"
         echo ""
         echo "Return code: $status (Error)"
@@ -73,7 +73,7 @@ function game {
         echo "*Passed*: check $@"
         success
     else
-        ERROR=$("$@" 2>&1 >/dev/null)
+        ERROR=$("$@")
         echo "****FAILED!****: check $@"
         echo ""
         echo "Return code: $status (Error)"
