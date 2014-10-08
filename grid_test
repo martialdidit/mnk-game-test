@@ -1,27 +1,27 @@
-0 game/game_quit_Q ../mnk-game/./mnk-game -m 5
-0 game/game_quit_Q ../mnk-game/./mnk-game -n 5
-0 game/game_quit_Q ../mnk-game/./mnk-game --set-m 5
-0 game/game_quit_Q ../mnk-game/./mnk-game --set-n 5
-0 game/game_quit_Q ../mnk-game/./mnk-game
-0 game/game_quit_Q_Q ../mnk-game/./mnk-game
-0 game/game_quit_Q_a ../mnk-game/./mnk-game
-0 game/game_quit_Qa ../mnk-game/./mnk-game
-0 game/game_quit_q ../mnk-game/./mnk-game
-0 game/game_quit_q_space ../mnk-game/./mnk-game
-0 game/game_quit_q_space_bis ../mnk-game/./mnk-game
-0 game/game_draw ../mnk-game/./mnk-game
-0 game/game_winner_1 ../mnk-game/./mnk-game
-0 game/game_winner_2 ../mnk-game/./mnk-game
-0 game/game_winner_3 ../mnk-game/./mnk-game
-0 game/game_winner_4 ../mnk-game/./mnk-game
-0 game/game_winner_line_5 ../mnk-game/./mnk-game
-0 game/game_winning_diag_6 ../mnk-game/./mnk-game
-0 game/game_winning_diag_7 ../mnk-game/./mnk-game
-0 game/game_winning_diag_8 ../mnk-game/./mnk-game
-0 game/game_winning_diag_9 ../mnk-game/./mnk-game
-0 game/game_winning_error_input ../mnk-game/./mnk-game
-0 game/game_winning_error_input_bis ../mnk-game/./mnk-game
-0 game/game_winning_1x1 ../mnk-game/./mnk-game -m 64 -n 64 -k 1
+0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game -m 5
+0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game -n 5
+0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game --set-m 5
+0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game --set-n 5
+0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game
+0 game/game_quit_Q_Q timeout 1 ../mnk-game/./mnk-game
+0 game/game_quit_Q_a timeout 1 ../mnk-game/./mnk-game
+0 game/game_quit_Qa timeout 1 ../mnk-game/./mnk-game
+0 game/game_quit_q timeout 1 ../mnk-game/./mnk-game
+0 game/game_quit_q_space timeout 1 ../mnk-game/./mnk-game
+0 game/game_quit_q_space_bis timeout 1 ../mnk-game/./mnk-game
+0 game/game_draw timeout 1 ../mnk-game/./mnk-game
+0 game/game_winner_1 timeout 1 ../mnk-game/./mnk-game
+0 game/game_winner_2 timeout 1 ../mnk-game/./mnk-game
+0 game/game_winner_3 timeout 1 ../mnk-game/./mnk-game
+0 game/game_winner_4 timeout 1 ../mnk-game/./mnk-game
+0 game/game_winner_line_5 timeout 1 ../mnk-game/./mnk-game
+0 game/game_winning_diag_6 timeout 1 ../mnk-game/./mnk-game
+0 game/game_winning_diag_7 timeout 1 ../mnk-game/./mnk-game
+0 game/game_winning_diag_8 timeout 1 ../mnk-game/./mnk-game
+0 game/game_winning_diag_9 timeout 1 ../mnk-game/./mnk-game
+0 game/game_winning_error_input timeout 1 ../mnk-game/./mnk-game
+0 game/game_winning_error_input_bis timeout 1 ../mnk-game/./mnk-game
+0 game/game_winning_1x1 timeout 1 ../mnk-game/./mnk-game -m 64 -n 64 -k 1
 0 game/game_draw valgrind --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game
-0 game/game_winner_1 valgrind --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game 
-0 game/game_winning_error_input_bis valgrind --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game 
+0 game/game_winner_1 timeout 1 valgrind  --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game 
+0 game/game_winning_error_input_bis timeout 1 valgrind --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game 
