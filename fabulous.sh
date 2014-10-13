@@ -114,10 +114,12 @@ echo ""
 echo "-----------( Build System )---------"
 echo ""
 
+cd ../mnk-game
 echo "Expected result: EXIT_SUCCES"
-$(make) 2>/dev/null
+make 2>/dev/null
 code=$?
-if [[ $code -ne 0 ]]; then
+echo $code
+if [[ $code -eq 0 ]]; then
     echo "*Passed*: check the make"
     success
 else
@@ -127,10 +129,10 @@ else
     exit
 fi
 echo ""
-$(make --help) 2>/dev/null
+make --help 2>/dev/null
 code=$?
 echo "Expected result: EXIT_SUCCES"
-if [[ code -ne 0 ]]; then
+if [[ code -eq 0 ]]; then
     echo "*Passed*: check the help target"
     success
 else
@@ -138,9 +140,18 @@ else
     failed
 fi
 
+if [[ ! -f ../mnk-game/mnk-game ]]; then
+    echo "****FAILED!****: executable not found"
+    echo "Abort the script"
+    failed
+    exit 
+fi  
+
 echo ""
 echo "-----------( Option Parser )---------"
 echo ""
+
+cd ../mnk-game-test
 
 #Basic test
 while read line
