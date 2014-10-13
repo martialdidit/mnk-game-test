@@ -20,6 +20,10 @@ STARTTIME=$(date +%s)
 declare pass=0
 declare fail=0
 
+red='\e[0;31m'
+blue='\e[1;34m'
+NC='\e[0m' # No Color
+
 function failed {
   fail=$((fail+1))
 }
@@ -39,10 +43,10 @@ function fabulous {
       echo "Expected result: EXIT_FAILURE"
     fi
     if [ $status -eq $EXPECT_VALUE ]; then
-        echo "*Passed*: check $@"
+        echo -e "${blue}*Passed*${NC}: check $@"
         success
     else
-        echo "****FAILED!****: check $@"
+        echo -e "${red}****FAILED!****:${NC} check $@"
         echo ""
         echo "Return code: $status (Error)"
         echo "Stderr"
@@ -69,10 +73,10 @@ function game {
       echo "Expected result: EXIT_FAILURE"
     fi
     if [ $status -eq $EXPECT_VALUE ]; then
-        echo "*Passed*: check $@"
+        echo -e "${blue}*Passed*${NC}: check $@"
         success
     else
-        echo "****FAILED!****: check $@"
+        echo -e "${red}****FAILED!****:${NC} check $@"
         echo ""
         echo "Return code: $status (Error)"
         echo "Stderr"
@@ -171,6 +175,6 @@ ENDTIME=$(date +%s)
 
 echo ""
 echo "----------( Final result )----------"
-echo "Passed $pass; Failed: $fail"
+echo -e "${blue}Passed $pass${NC}; ${red}Failed: $fail${NC}"
 echo "Time elapsed: $((ENDTIME-STARTTIME))s"
 
