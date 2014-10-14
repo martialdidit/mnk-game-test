@@ -20,7 +20,7 @@ STARTTIME=$(date +%s)
 declare pass=0
 declare fail=0
 
-red='\e[0;31m'
+red='\e[41m'
 blue='\e[1;34m'
 NC='\e[0m' # No Color
 
