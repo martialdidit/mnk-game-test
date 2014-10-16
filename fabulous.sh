@@ -22,6 +22,7 @@ declare fail=0
 
 red='\e[41m'
 blue='\e[1;34m'
+purple='\e[1;31m'
 NC='\e[0m' # No Color
 
 function failed {
@@ -80,6 +81,7 @@ function game {
         echo ""
         echo "Return code: $status (Error)"
         echo "Stderr"
+        echo "Check the file $FILE to see the input"
         while read -r line
         do
             cat <<< "$line"
@@ -178,6 +180,9 @@ ENDTIME=$(date +%s)
 
 echo ""
 echo "----------( Final result )----------"
-echo -e "${blue}Passed $pass${NC}; ${red}Failed: $fail${NC}"
+echo -e "${blue}Passed $pass${NC}; ${red}Failed: $fail${NC}; Total 104 tests"
+if [[ $((pass + fail)) -ne 104 ]]; then 
+    echo -e "${purple}YOU HAVE A BREAK LOOP${NC}, not all the tests are passed, fix the problem and reload the fabulous test"
+fi
 echo "Time elapsed: $((ENDTIME-STARTTIME))s"
 

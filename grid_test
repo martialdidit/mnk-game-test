@@ -23,5 +23,5 @@
 0 game/game_winning_error_input_bis timeout 1 ../mnk-game/./mnk-game
 0 game/game_winning_1x1 timeout 1 ../mnk-game/./mnk-game -m 64 -n 64 -k 1
 0 game/game_draw valgrind --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game
-0 game/game_winner_1 timeout 1 valgrind  --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game 
-0 game/game_winning_error_input_bis timeout 1 valgrind --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game 
+0 game/game_winner_1 timeout 2 valgrind --track-origins=yes --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game 
+0 game/game_winning_error_input_bis timeout 2 valgrind --track-origins=yes --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game 
