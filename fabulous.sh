@@ -81,7 +81,11 @@ function game {
         echo ""
         echo "Return code: $status (Error)"
         echo "Stderr"
-        echo "Check the file $FILE to see the input"
+        echo "Stdin :"
+        while read -r line
+        do
+            echo $line
+        done <$FILE
         while read -r line
         do
             cat <<< "$line"
