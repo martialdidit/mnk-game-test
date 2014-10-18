@@ -3,18 +3,7 @@
 #mnk-game-test
 #Following repository: https://github.com/martialdidit/mnk-game-test
 #Martial Puygrenier - martialdidit
-#last update : 08/10/2014
-
-if [ -z "$1" ]
-  then
-    echo "file sample_test missing"
-    exit
-fi
-if [ -z "$2" ]
-  then
-    echo "file grid_test missing"
-    exit
-fi
+#last update : 18/10/2014
 
 STARTTIME=$(date +%s)
 declare pass=0
@@ -56,6 +45,28 @@ function fabulous {
     fi
     echo ""
 }
+function constest {
+    
+    EXPECT_VALUE=$1
+    shift
+    "$@" &>/dev/null
+    local status=$?
+    if [ $EXPECT_VALUE -eq 0 ]; then
+      echo "Expected result: EXIT_SUCCESS"
+    else
+      echo "Expected result: EXIT_FAILURE"
+    fi
+    if [ $status -eq $EXPECT_VALUE ]; then
+        echo -e "${blue}*Passed*${NC}: check $@"
+        success
+    else
+        echo -e "${red}****FAILED!****:${NC} check $@"
+        echo ""
+        echo "Return code: $status (Error)"
+        failed
+    fi
+    echo ""
+}
 function game {
 
     EXPECT_VALUE=$1
@@ -81,6 +92,7 @@ function game {
         echo ""
         echo "Return code: $status (Error)"
         echo "Stderr"
+        echo "Check the file $FILE"
         echo "Stdin :"
         while read -r line
         do
@@ -129,9 +141,8 @@ echo ""
 
 cd ../mnk-game
 echo "Expected result: EXIT_SUCCES"
-make 2>/dev/null
+make &>/dev/null
 code=$?
-echo $code
 if [[ $code -eq 0 ]]; then
     echo "*Passed*: check the make"
     success
@@ -142,7 +153,7 @@ else
     exit
 fi
 echo ""
-make --help 2>/dev/null
+make help &>/dev/null
 code=$?
 echo "Expected result: EXIT_SUCCES"
 if [[ code -eq 0 ]]; then
@@ -166,27 +177,48 @@ echo ""
 
 cd ../mnk-game-test
 
-#Basic test
-while read line
+for i in "$@"
 do
-    name=$line
-    fabulous $name
-done < $1
+    case $i in
+            -s)
+            #Basic test
+            while read line
+            do
+                name=$line
+                fabulous $name
+            done < sample_test
 
-#Grid test
-while read line
-do
-    name=$line
-    game $name
-done < $2
+        ;;
+            -g)
+            #Grid test
+            while read line
+            do
+                name=$line
+                game $name
+            done < grid_test
+        ;;
+            -c)
+            #Constest test
+            while read line
+            do
+                name=$line
+                constest $name
+            done < test_contest
+        ;;
+        *)
+            echo "Unkknow option, see the readme"
+            exit
+        ;;
+    esac
+done
 
 ENDTIME=$(date +%s)
 
 echo ""
 echo "----------( Final result )----------"
-echo -e "${blue}Passed $pass${NC}; ${red}Failed: $fail${NC}; Total 104 tests"
-if [[ $((pass + fail)) -ne 104 ]]; then 
-    echo -e "${purple}YOU HAVE A BREAK LOOP${NC}, not all the tests are passed, fix the problem and reload the fabulous test"
+echo -e "${blue}Passed $pass${NC}; ${red}Failed: $fail${NC}; Total 103 tests"
+if [[ $((pass + fail)) -ne 103 ]]; then 
+    echo -e "${purple}CAREFUL, NOT ALL THE TEST ARE PASSED IN THE SCRIPT${NC}, can be an infinite loop or you simply forget to add the test files."
 fi
 echo "Time elapsed: $((ENDTIME-STARTTIME))s"
 
