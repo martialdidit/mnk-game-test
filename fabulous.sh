@@ -12,7 +12,10 @@ declare fail=0
 red='\e[41m'
 blue='\e[1;34m'
 purple='\e[1;31m'
+yellow='\e[43m'
 NC='\e[0m' # No Color
+bold=`tput bold`
+normal=`tput sgr0`
 
 function failed {
   fail=$((fail+1))
@@ -179,44 +182,72 @@ cd ../mnk-game-test
 
 for i in "$@"
 do
-    case $i in
-            -s)
-            #Basic test
-            while read line
-            do
-                name=$line
-                fabulous $name
-            done < sample_test
+case $i in
+        -s)
+        #Basic test
+        while read line
+        do
+            name=$line
+            fabulous $name
+        done < sample_test
 
-        ;;
-            -g)
-            #Grid test
-            while read line
-            do
-                name=$line
-                game $name
-            done < grid_test
-        ;;
-            -c)
-            #Constest test
-            while read line
-            do
-                name=$line
-                constest $name
-            done < test_contest
-        ;;
-        *)
-            echo "Unkknow option, see the readme"
-            exit
-        ;;
-    esac
+    ;;
+        -g)
+        #Grid test
+        while read line
+        do
+            name=$line
+            game $name
+        done < grid_test
+    ;;
+        -c)
+        #Constest test
+        while read line
+        do
+            name=$line
+            constest $name
+        done < test_contest
+    ;;
+        -b)
+        #board tests
+        gcc -std=c99 -Wall -g -lm -I../mnk-game/include -I../mnk-game/src ../mnk-game/include/board.h ../mnk-game/src/board.c  board_test.c -o board_test
+        number_test=$(./board_test)
+        cpt=0
+        while read line
+        do
+            if [[ "$line" =~ "${red}****FAILED!****:${NC}" ]]; then
+                cpt=$(($cpt+1))
+                failed
+            fi
+            if [[ "$line" =~ "*Passed*" ]]; then
+                cpt=$(($cpt+1))
+                success
+            fi            
+            eval echo -e $line
+        done < output.txt
+        rm output.txt
+        rm file.txt
+        if [ $cpt -ne 21 ]; then
+            echo ""
+            echo -e "============${red} CAREFUL, NOT ALL THE TEST ARE PASSED IN THE SCRIPT ${NC}================"
+            echo ""
+            echo -e "${bold}You certainly have a segmentation fault at the last instruction${normal}"
+            echo ""
+            echo -e "===========================${yellow} END OF THE BOARD TEST ${NC}=============================="
+        fi
+    ;;
+    *)
+        echo "Unkknow option, see the readme"
+        exit
+    ;;
+esac
 done
 
 ENDTIME=$(date +%s)
 
 echo ""
 echo "----------( Final result )----------"
-echo -e "${blue}Passed $pass${NC}; ${red}Failed: $fail${NC}; Total 103 tests"
+echo -e "${blue}Passed $pass${NC}; ${red}Failed: $fail${NC}; Total 124 tests"
 if [[ $((pass + fail)) -ne 103 ]]; then 
     echo -e "${purple}CAREFUL, NOT ALL THE TEST ARE PASSED IN THE SCRIPT${NC}, can be an infinite loop or you simply forget to add the test files."
 fi
