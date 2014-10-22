@@ -216,7 +216,6 @@ case $i in
         while read line
         do
             if [[ "$line" =~ "FAILED" ]]; then
-                echo "sdfsdf"
                 cpt=$(($cpt+1))
                 failed
             fi
