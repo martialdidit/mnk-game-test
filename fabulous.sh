@@ -248,7 +248,7 @@ ENDTIME=$(date +%s)
 echo ""
 echo "----------( Final result )----------"
 echo -e "${blue}Passed $pass${NC}; ${red}Failed: $fail${NC}; Total 124 tests"
-if [[ $((pass + fail)) -ne 103 ]]; then 
+if [[ $((pass + fail)) -ne 124 ]]; then 
     echo -e "${purple}CAREFUL, NOT ALL THE TEST ARE PASSED IN THE SCRIPT${NC}, can be an infinite loop or you simply forget to add the test files."
 fi
 echo "Time elapsed: $((ENDTIME-STARTTIME))s"
