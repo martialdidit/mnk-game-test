@@ -19,17 +19,18 @@ You can now launch the tests regarding what you want to test !
 -s : file sample_test -> just check the basic tests of TP1
 -g : file grid_test -> the tests of the TP2 & some of TP3
 -c : file test_contest -> tests of the contest mode
+-b : file board_test.c -> tests of the board TP4
 ```
 There is also valgrind tests in the script ! 
 
 Launch the **./fablulous** test with only one option:
 ```
-./fabulous.sh -s #or -g -c
+./fabulous.sh -s #or -g -c -b
 ```
 All options:
 
 ```
-./fabulous.sh -s -g -c
+./fabulous.sh -s -g -c -b
 ```
 
 Enjoy ! 
