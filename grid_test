@@ -1,3 +1,9 @@
+0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game -0
+0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game --all-ai
+0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game -1
+0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game --player1-ai
+0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game --player2-ai
+0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game -2
 0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game -m 5
 0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game -n 5
 0 game/game_quit_Q timeout 1 ../mnk-game/./mnk-game --set-m 5

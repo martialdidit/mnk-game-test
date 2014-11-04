@@ -3,18 +3,12 @@
 0 timeout 1 ../mnk-game/./mnk-game --version
 0 timeout 1 ../mnk-game/./mnk-game -h
 0 timeout 1 ../mnk-game/./mnk-game --help
-0 timeout 1 ../mnk-game/./mnk-game -0
-0 timeout 1 ../mnk-game/./mnk-game --all-ai
-0 timeout 1 ../mnk-game/./mnk-game -1
-0 timeout 1 ../mnk-game/./mnk-game --player1-ai
-0 timeout 1 ../mnk-game/./mnk-game -2
 1 timeout 1 ../mnk-game/./mnk-game -m 65
 1 timeout 1 ../mnk-game/./mnk-game -n 65
 1 timeout 1 ../mnk-game/./mnk-game -k 65
 1 timeout 1 ../mnk-game/./mnk-game -m 0
 1 timeout 1 ../mnk-game/./mnk-game -n 0
 1 timeout 1 ../mnk-game/./mnk-game -k 0
-0 timeout 1 ../mnk-game/./mnk-game --player2-ai
 1 timeout 1 ../mnk-game/./mnk-game -m
 1 timeout 1 ../mnk-game/./mnk-game --set-m
 1 timeout 1 ../mnk-game/./mnk-game --set-k
