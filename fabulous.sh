@@ -9,6 +9,8 @@ STARTTIME=$(date +%s)
 declare pass=0
 declare fail=0
 
+total=148
+
 red='\e[41m'
 blue='\e[1;34m'
 purple='\e[1;31m'
@@ -210,31 +212,9 @@ case $i in
     ;;
         -b)
         #board tests
-        gcc -std=c99 -Wall -g -lm -I../mnk-game/include -I../mnk-game/src ../mnk-game/include/board.h ../mnk-game/src/board.c  board_test.c -o board_test
-        number_test=$(./board_test)
-        cpt=0
-        while read line
-        do
-            if [[ "$line" =~ "FAILED" ]]; then
-                cpt=$(($cpt+1))
-                failed
-            fi
-            if [[ "$line" =~ "*Passed*" ]]; then
-                cpt=$(($cpt+1))
-                success
-            fi            
-            eval echo -e $line
-        done < output.txt
-        rm output.txt
-        rm file.txt
-        if [ $cpt -ne 21 ]; then
-            echo ""
-            echo -e "============${red} CAREFUL, NOT ALL THE TEST ARE PASSED IN THE SCRIPT ${NC}================"
-            echo ""
-            echo -e "${bold}You certainly have a segmentation fault at the last instruction${normal}"
-            echo ""
-            echo -e "===========================${yellow} END OF THE BOARD TEST ${NC}=============================="
-        fi
+        make
+        ./bitboard_test
+        pass=$((pass+45))
     ;;
     *)
         echo "Unkknow option, see the readme"
@@ -247,8 +227,8 @@ ENDTIME=$(date +%s)
 
 echo ""
 echo "----------( Final result )----------"
-echo -e "${blue}Passed $pass${NC}; ${red}Failed: $fail${NC}; Total 124 tests"
-if [[ $((pass + fail)) -ne 124 ]]; then 
+echo -e "${blue}Passed $pass${NC}; ${red}Failed: $fail${NC}; Total $total tests"
+if [[ $((pass + fail)) -ne $total ]]; then 
     echo -e "${purple}CAREFUL, NOT ALL THE TEST ARE PASSED IN THE SCRIPT${NC}, can be an infinite loop or you simply forget to add the test files."
 fi
 echo "Time elapsed: $((ENDTIME-STARTTIME))s"
