@@ -9,12 +9,12 @@
 0 game/game_quit_Q timelimit -t0.002 ../mnk-game/./mnk-game --set-m 5
 0 game/game_quit_Q timelimit -t0.002 ../mnk-game/./mnk-game --set-n 5
 0 game/game_quit_Q timelimit -t0.002 ../mnk-game/./mnk-game
-0 game/game_quit_Q_Q timelimit -t0.002 ../mnk-game/./mnk-game
-0 game/game_quit_Q_a timelimit -t0.002 ../mnk-game/./mnk-game
-0 game/game_quit_Qa timelimit -t0.002 ../mnk-game/./mnk-game
-0 game/game_quit_q timelimit -t0.002 ../mnk-game/./mnk-game
-0 game/game_quit_q_space timelimit -t0.002 ../mnk-game/./mnk-game
-0 game/game_quit_q_space_bis timelimit -t0.002 ../mnk-game/./mnk-game
+0 game/game_quit_Q_Q timelimit -t0.03 ../mnk-game/./mnk-game
+0 game/game_quit_Q_a timelimit -t0.03 ../mnk-game/./mnk-game
+0 game/game_quit_Qa timelimit -t0.03 ../mnk-game/./mnk-game
+0 game/game_quit_q timelimit -t0.03 ../mnk-game/./mnk-game
+0 game/game_quit_q_space timelimit -t0.03 ../mnk-game/./mnk-game
+0 game/game_quit_q_space_bis timelimit -t0.03 ../mnk-game/./mnk-game
 0 game/game_draw timelimit -t0.03 ../mnk-game/./mnk-game
 0 game/game_winner_1 timelimit -t0.03 ../mnk-game/./mnk-game
 0 game/game_winner_2 timelimit -t0.03 ../mnk-game/./mnk-game
@@ -29,5 +29,5 @@
 0 game/game_winning_error_input_bis timelimit -t0.03 ../mnk-game/./mnk-game
 0 game/game_winning_1x1 timelimit -t0.03 ../mnk-game/./mnk-game -m 64 -n 64 -k 1
 0 game/game_draw valgrind --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game
-0 game/game_winner_1 timelimit -t1 valgrind --track-origins=yes --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game 
-0 game/game_winning_error_input_bis timelimit -t1 valgrind --track-origins=yes --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game 
+0 game/game_winner_1 timelimit -t2 valgrind --track-origins=yes --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game 
+0 game/game_winning_error_input_bis timelimit -t2 valgrind --track-origins=yes --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game 

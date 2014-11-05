@@ -42,5 +42,5 @@
 1 timelimit -t0.02 ../mnk-game/./mnk-game -c test/board_41e-4x4_no_X
 0 timelimit -t0.02 ../mnk-game/./mnk-game -c test/board-42-1x1_with_no_final_linebreak_and_comment
 1 timelimit -t0.002 ../mnk-game/./mnk-game -c test/board-43e-4x4_one_player_missing
-0 timelimit -t1 valgrind --track-origins=yes --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game -V
-0 timelimit -t1 valgrind --track-origins=yes --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game -c test/board-04-size_3x3
+0 timelimit -t2 valgrind --track-origins=yes --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game -V
+0 timelimit -t2 valgrind --track-origins=yes --leak-check=full --show-reachable=yes --error-exitcode=5 ../mnk-game/./mnk-game -c test/board-04-size_3x3
