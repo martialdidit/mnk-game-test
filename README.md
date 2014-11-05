@@ -1,8 +1,9 @@
 mnk-game-test
 =============
 
-Automatic test of the mnk-game 
+Automatic test of the mnk-game - Adapted for the CREMI machines. Tested on a 
 
+Dedian with an Intel Xeon
 
 
 ### 1) How to use the script ? 
