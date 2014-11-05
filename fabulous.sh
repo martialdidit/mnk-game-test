@@ -217,7 +217,7 @@ case $i in
         pass=$((pass+45))
     ;;
     *)
-        echo "Unkknow option, see the readme"
+        echo "Unknow option, see the readme"
         exit
     ;;
 esac
@@ -229,7 +229,7 @@ echo ""
 echo "----------( Final result )----------"
 echo -e "${blue}Passed $pass${NC}; ${red}Failed: $fail${NC}; Total $total tests"
 if [[ $((pass + fail)) -ne $total ]]; then 
-    echo -e "${purple}CAREFUL, NOT ALL THE TEST ARE PASSED IN THE SCRIPT${NC}, can be an infinite loop or you simply forget to add the test files."
+    echo -e "${purple}CAREFUL, NOT ALL THE TEST ARE PASSED IN THE SCRIPT${NC}, can be an infinite loop or you simply forget to add other test files."
 fi
 echo "Time elapsed: $((ENDTIME-STARTTIME))s"
 
