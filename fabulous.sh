@@ -54,7 +54,7 @@ function constest {
     
     EXPECT_VALUE=$1
     shift
-    "$@" &>/dev/null
+    "$@"
     local status=$?
     if [ $EXPECT_VALUE -eq 0 ]; then
       echo "Expected result: EXIT_SUCCESS"
@@ -213,8 +213,11 @@ case $i in
         -b)
         #board tests
         make
+        exec 3>&1
         ./bitboard_test
-        pass=$((pass+45))
+        result=$(cat pass)
+        pass=$((pass+result))
+        fail=$((fail+$((45-result))))
     ;;
     *)
         echo "Unknow option, see the readme"
