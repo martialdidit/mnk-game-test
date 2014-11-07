@@ -8,13 +8,18 @@
 /* gcc -std=c99 -I../include -c bitboard_test.c */
 /* gcc -std=c99 -o bitboard_test bitboard_test.o board.o */
 
+static int pass = 0;
+
 void
 display_result (bool test)
 {
-  if (test)
+  if (test) {
     fprintf (stdout, "(passed)\n");
-  else
+	pass ++;
+	}
+  else {
     fprintf (stdout, "(failed!)\n");
+  }
 }
 
 int
@@ -204,6 +209,8 @@ main (void)
  display_result (result == 0);
 
  result = board_win (board0, 1);
+
+ board_display(board0,stdout);
  printf ("board_win (board0, 1) == 1 || 2 : %d ", result);
  display_result (result == 1 || result == 2);
 
@@ -249,6 +256,10 @@ main (void)
  printf ("board_display (board0, stdout) : true ");
  display_result (true);
  board_delete (board0);
+
+ FILE * file;
+ file = fopen("pass", "w");
+ fprintf(file, "%d\n", pass);
 
  return EXIT_SUCCESS;
 }
