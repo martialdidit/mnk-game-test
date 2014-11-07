@@ -9,7 +9,7 @@ STARTTIME=$(date +%s)
 declare pass=0
 declare fail=0
 
-total=148
+total=149
 
 red='\e[41m'
 blue='\e[1;34m'

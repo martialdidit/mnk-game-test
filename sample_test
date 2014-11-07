@@ -1,24 +1,25 @@
-1 timelimit -t0.03 ../mnk-game/./mnk-game -x
-0 timelimit -t0.03 ../mnk-game/./mnk-game -V
-0 timelimit -t0.03 ../mnk-game/./mnk-game --version
-0 timelimit -t0.03 ../mnk-game/./mnk-game -h
-0 timelimit -t0.03 ../mnk-game/./mnk-game --help
-1 timelimit -t0.03 ../mnk-game/./mnk-game -m 65
-1 timelimit -t0.03 ../mnk-game/./mnk-game -n 65
-1 timelimit -t0.03 ../mnk-game/./mnk-game -k 65
-1 timelimit -t0.03 ../mnk-game/./mnk-game -m 0
-1 timelimit -t0.03 ../mnk-game/./mnk-game -n 0
-1 timelimit -t0.03 ../mnk-game/./mnk-game -k 0
-1 timelimit -t0.03 ../mnk-game/./mnk-game -m
-1 timelimit -t0.03 ../mnk-game/./mnk-game --set-m
-1 timelimit -t0.03 ../mnk-game/./mnk-game --set-k
-1 timelimit -t0.03 ../mnk-game/./mnk-game --set-n
-1 timelimit -t0.03 ../mnk-game/./mnk-game -n
-1 timelimit -t0.03 ../mnk-game/./mnk-game -k
-1 timelimit -t0.03 ../mnk-game/./mnk-game -c
-1 timelimit -t0.03 ../mnk-game/./mnk-game -m 5 -n 5 -k 6
-1 timelimit -t0.03 ../mnk-game/./mnk-game -n -1 -m 4 -k 5
-1 timelimit -t0.03 ../mnk-game/./mnk-game -n 0 -m 0 -k 0
-1 timelimit -t0.03 ../mnk-game/./mnk-game --contest
-1 timelimit -t0.03 ../mnk-game/./mnk-game -c TEXT.TEXT
-1 timelimit -t0.03 ../mnk-game/./mnk-game --contest TEXT.TEXT
+1 timelimit -t5 ../mnk-game/./mnk-game -x
+0 timelimit -t5 ../mnk-game/./mnk-game -V
+0 timelimit -t5 ../mnk-game/./mnk-game --version
+0 timelimit -t5 ../mnk-game/./mnk-game -h
+0 timelimit -t5 ../mnk-game/./mnk-game --help
+1 timelimit -t5 ../mnk-game/./mnk-game -m 65
+1 timelimit -t5 ../mnk-game/./mnk-game -n 65
+1 timelimit -t5 ../mnk-game/./mnk-game -k 65
+1 timelimit -t5 ../mnk-game/./mnk-game -m 0
+1 timelimit -t5 ../mnk-game/./mnk-game -n 0
+1 timelimit -t5 ../mnk-game/./mnk-game -k 0
+1 timelimit -t5 ../mnk-game/./mnk-game -m
+1 timelimit -t5 ../mnk-game/./mnk-game --set-m
+1 timelimit -t5 ../mnk-game/./mnk-game --set-k
+1 timelimit -t5 ../mnk-game/./mnk-game --set-n
+1 timelimit -t5 ../mnk-game/./mnk-game -n
+1 timelimit -t5 ../mnk-game/./mnk-game -k
+1 timelimit -t5 ../mnk-game/./mnk-game -c
+1 timelimit -t5 ../mnk-game/./mnk-game -m 5 -n 5 -k 6
+1 timelimit -t5 ../mnk-game/./mnk-game -n -1 -m 4 -k 5
+1 timelimit -t5 ../mnk-game/./mnk-game -n 0 -m 0 -k 0
+1 timelimit -t5 ../mnk-game/./mnk-game --contest
+1 timelimit -t5 ../mnk-game/./mnk-game -c TEXT.TEXT
+1 timelimit -t5 ../mnk-game/./mnk-game --contest TEXT.TEXT
+0 timelimit -t5 ../mnk-game/./mnk-game -0
