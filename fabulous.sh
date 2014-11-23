@@ -3,7 +3,7 @@
 #mnk-game-test
 #Following repository: https://github.com/martialdidit/mnk-game-test
 #Martial Puygrenier - martialdidit
-#last update : 18/10/2014
+#last update : 32/11/2014
 
 STARTTIME=$(date +%s)
 declare pass=0
